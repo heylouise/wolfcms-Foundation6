@@ -1,0 +1,45 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="<?php echo ($this->description() != '') ? $this->description() : 'Default description goes here'; ?>" />
+    <meta name="keywords" content="<?php echo ($this->keywords() != '') ? $this->keywords() : 'default, keywords, here'; ?>" />
+    <meta name="author" content="Your name here." />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><?php echo $this->title(); ?></title>
+    <link rel="favourites icon" href="<?php echo THEMES_PATH; ?>wolfcms-Foundation6/img/favicon.ico" />
+    <link rel="stylesheet" href="<?php echo THEMES_PATH; ?>wolfcms-Foundation6/css/foundation.css" />
+    <link rel="stylesheet" href="<?php echo THEMES_PATH; ?>wolfcms-Foundation6css/app.css" />
+  </head>
+  <body>
+    <header class="masthead clearfix">
+      <div class="row">
+      <div class="large-12 column text-center large-text-left">
+        <a<?php echo url_match('/') ? ' class="current"': ''; ?> href="<?php echo URL_PUBLIC; ?>">Foundation 6 for Wolf CMS</a>
+      </div>
+      </div>
+    </header>
+    <section id="content" class="padder">
+      <div class="row">
+        <div class="large-8 columns">
+        <h2><?php echo $this->title(); ?></h2>
+        <?php echo $this->content(); ?> 
+        <?php if ($this->hasContent('extended')) echo $this->content('extended'); ?> 
+        </div>
+        <div class="large-4 columns">
+        <?php echo $this->content('sidebar', true); ?>  
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact" class="sitefooter">
+      <div class="row">
+        <div class="large-12 column text-center">
+          <p class="info">Built with <a href="http://foundation.zurb.com/">Zurb Foundation</a> &amp; <a href="http://www.wolfcms.org/" title="Wolf CMS">Wolf CMS</a> Inside.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
